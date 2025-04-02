@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html  lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale =1.0">
+
+<head>
+    <style>
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: x-large;
+            color: blue;
+            text-align: center;
+        }
+        .next p{
+            font-size: x-large;
+            font-family: cursive;
+        }
+
+
+        header {
+            display: flex;
+            /*styling the header content*/
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(26, 16, 163);
+            height: 150px;
+        }
+
+        #title {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+            /*styles the title portfolio*/
+            font-size: 2.5em;
+            color: yellow;
+        }
+
+
+
+        header ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            color: cornflowerblue;
+        }
+
+        header li {
+            align-self: center;
+            /*styles home,skills,educational qualifiaction,projects  tabs*/
+            margin: 0 10px;
+
+        }
+
+        header ul li {
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+            /*setting transtion with color on lists*/
+        }
+
+        header ul li:hover {
+            color: yellow;
+
+        }
+
+        #contact {
+            padding: 2em;
+            background-color: darkcyan;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-form label {
+            font-size: 1.1em;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid aquamarine;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: yellowgreen;
+        }
+
+        .contact-form button {
+            background-color: rgb(26, 16, 163);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .contact-form button:hover {
+            background-color: yellowgreen;
+        }
+
+        @media (max-width: 600px) {
+            #contact {
+                padding: 1em;
+                max-width: 90%;
+            }
+
+            .contact-form button {
+                width: 100%;
+            }
+        }
+
+
+
+
+        #bottomtext h3 {
+            color: blue;
+            font-size: medium;
+            font-stretch: expanded;
+            font-family: cursive;
+        }
+
+        span {
+            color: deeppink;
+            font-weight: lighter;
+        }
+
+        .bottom {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            background-color: antiquewhite;
+            border: 20px solid lightblue;
+        }
+
+        #searchinput {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+        
+        }
+
+        /* Style for Input Box */
+        #searchinputbox {
+            width: 70%;
+            padding: 12px;
+            font-size: 16px;
+            border: 5px solid aquamarine;
+            border-radius: 8px;
+            outline: none;
+
+            text-align: center;
+        }
+
+        #searchinputbox:hover {
+            background-color: aquamarine;
+
+        }
+
+
+
+        /* Style for Search Button */
+        #searchbtn {
+            background-color: rgb(26, 16, 163);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #searchbtn:hover {
+            background-color: yellowgreen;
+        }
+
+        /* Make it Responsive */
+        @media (max-width: 600px) {
+            #searchinput {
+                flex-direction: column;
+                width: 90%;
+                padding: 15px;
+            }
+
+            #searchinputbox {
+                width: 100%;
+            }
+
+            #searchbtn {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+        .next {
+            padding: 2em;
+            margin: 20px auto;
+            background-color: bisque;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        #introbtn {
+            height: auto;
+            position: absolute;
+            right: 10px;
+            font-family: cursive;
+            background-color: red;
+        }
+
+        #bottomtext h1 {
+            font-family: math;
+            font-weight: bold;
+            color: blue;
+        }
+
+        .styled-image {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            
+            border-radius: 15px;
+            border: 3px solid lightblue;
+            max-width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 180px;
+        }
+
+        .styled-image:hover {
+            transform: scale(1.5);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    
+        }
+
+        #bottomtext {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        footer {
+            background-color:burlywood;
+            font-weight: 600;
+            text-align: center;
+            padding: 2em ;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top-left">
+            <img src="logo.jpg" height="150px" alt="A picture of Adamas University">
+        </div>
+
+        <section id="title">
+            PORTFOLIO
+        </section>
+        <div class="top-right">
+            <ul>
+                <li>HOME</li>
+                <li>SKILLS</li>
+                <li>EDUCATIONAL QUALIFICATION</li>
+                <li>PROJECTS</li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="bottom">
+            <div class="bottom-left">
+
+                <section id="searchinput">
+
+                    <input type="text" id="searchinputbox" placeholder="Enter here">
+                    <button id="searchbtn">SEARCH</button>
+                </section>
+                <section id="bottomtext">
+
+                    <h1>HELLO, I am <span>DEBLINA</span> . A VERY WARM WELCOME TO MY PROFILE!</h1>
+                    <h3>FEEL FREE TO <span>SEARCH</span> ABOUT MY RESPECTIVE <span>FIELDS</span> TAKING REFFERNCE FROM
+                        <span>TOP-RIGHT CORNER</span>&#128522
+                    </h3>
+                    <img src="my profie pic.jpg" class="styled-image" alt="My image">
+                </section>
+            </div>
+
+
+            <div class="bottom-right">
+                <img src="portfolio3.gif" style="height:-webkit-fill-available" alt="A gif"></div>
+        </div>
+
+        <div>
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <form class="contact-form" id="contactForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+
+        </div>
+</main>
+<footer>
+    <p>&copy; 2025 My Portfolio</p>
+</footer>
+    <script src="portfolio4.js" defer></script>
+
+
+
+</body>
+
+</html>
